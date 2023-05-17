@@ -1,9 +1,7 @@
+import { Home } from 'pages';
+
 export function App() {
-  return (
-    <div className="App">
-      Inicio de um sonho!
-    </div>
-  );
+  return (<Home />);
 }
 
 export default App;
