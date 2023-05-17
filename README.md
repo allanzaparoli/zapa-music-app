@@ -3,6 +3,7 @@
 - MUI
 - React Router DOM
 - Redux
+- Redux Localstore
 - ESLint
 - Axios
 - Emotion Styled
