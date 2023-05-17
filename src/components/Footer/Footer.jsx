@@ -5,7 +5,6 @@ export function Footer() {
     <S.FooterContainer>
       <S.FooterText>
         &copy; 2023 - Desenvolvido por
-        {' '}
       </S.FooterText>
       <S.FooterLink
         href="https://linkedin.com/in/allanzaparoli"
