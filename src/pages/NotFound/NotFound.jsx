@@ -1,10 +1,10 @@
 import { Footer, Header } from 'components';
 
-export function Home() {
+export function NotFound() {
   return (
     <>
       <Header />
-      <div>Home</div>
+      <div>NotFound</div>
       <Footer />
     </>
   );

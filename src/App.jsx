@@ -1,7 +1,5 @@
-import { Home } from 'pages';
+import { Router } from 'routes';
 
 export function App() {
-  return (<Home />);
+  return (<Router />);
 }
-
-export default App;
