@@ -7,7 +7,8 @@ export function SearchInput({ loading = false }) {
   const [searchValue, setSearchValue] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     navigate(`/search/${searchValue}`);
   };
 
@@ -17,7 +18,6 @@ export function SearchInput({ loading = false }) {
         <TextField
           id="outlined"
           label="Buscar músicas"
-          defaultValue={searchValue}
           onChange={(event) => setSearchValue(event.target.value)}
           value={searchValue}
         />
