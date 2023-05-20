@@ -5,15 +5,9 @@ export function UserPlaylist() {
   const { userPlaylist, playerState } = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  const isMobileOrTablet = window.matchMedia('(max-width: 768px)').matches;
-
   const handlePlay = async (videoId, songName) => {
     dispatch(setCurrentVideoId({ videoId, songName }));
     dispatch(setPlayerState({ ...playerState, playing: true, isPlayerOpen: true }));
-    if (isMobileOrTablet) {
-      const playBtn = document.getElementById('react-player');
-      playBtn.click();
-    }
   };
 
   return (
