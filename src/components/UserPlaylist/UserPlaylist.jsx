@@ -11,8 +11,7 @@ export function UserPlaylist() {
     dispatch(setCurrentVideoId({ videoId, songName }));
     dispatch(setPlayerState({ ...playerState, playing: true, isPlayerOpen: true }));
     if (isMobileOrTablet) {
-      const playBtn = document.getElementById('playBtn');
-      playBtn.click();
+      const playBtn = document.getElementById('react-player');
       playBtn.click();
     }
   };
