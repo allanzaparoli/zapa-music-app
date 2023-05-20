@@ -13,9 +13,14 @@ export function Player({ videoDetails, width, height }) {
 
   const { videoId, songName } = videoDetails;
 
+  const isMobileOrTablet = window.matchMedia('(max-width: 768px)').matches;
+
   useEffect(() => {
-    const playBtn = document.getElementById('react-player');
-    playBtn.click();
+    if (isMobileOrTablet) {
+      const playBtn = document.getElementById('playBtn');
+      playBtn.click();
+      playBtn.click();
+    }
   }, [videoDetails]);
 
   const addToPlaylist = () => {
