@@ -5,7 +5,7 @@ export const searchYouTubeAPI = (search) => {
     method: 'GET',
     url: 'https://youtube-search-and-download.p.rapidapi.com/search',
     params: {
-      query: search,
+      query: `${search} official audio`,
       gl: 'BR',
       type: 'v',
       sort: 'r',

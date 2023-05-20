@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home, NotFound, Search } from 'pages';
+import {
+  Home, NotFound, Search, MyPlaylist,
+} from 'pages';
 
 export function Router() {
   return (
@@ -12,6 +14,10 @@ export function Router() {
         <Route
           path="/search/:query"
           element={<Search />}
+        />
+        <Route
+          path="/my-playlist"
+          element={<MyPlaylist />}
         />
         <Route
           path="*"

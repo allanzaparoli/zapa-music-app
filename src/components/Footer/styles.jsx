@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Typography, Link } from '@mui/material';
 
 export const FooterContainer = styled.footer`
+  position: fixed;
   background-color: #2c3e50;
   padding: 20px;
   width: 100%;
