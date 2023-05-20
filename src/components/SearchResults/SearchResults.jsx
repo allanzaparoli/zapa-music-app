@@ -27,7 +27,7 @@ export function SearchResults() {
         {resultCount}
       </div>
       <div>
-        {results.map((result) => (
+        {results?.map((result) => (
           <div key={result.trackId}>
             <img src={result.artworkUrl100} alt={result.trackName} />
             <div>{result.trackName}</div>
