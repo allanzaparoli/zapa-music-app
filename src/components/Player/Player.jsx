@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import ReactPlayer from 'react-player/youtube';
 import { useSelector, useDispatch } from 'react-redux';
 import { setPlayerState, setUserPlaylist } from 'redux/slices';
@@ -12,6 +13,11 @@ export function Player({ videoDetails, width, height }) {
 
   const { videoId, songName } = videoDetails;
 
+  useEffect(() => {
+    const playBtn = document.getElementById('react-player');
+    playBtn.click();
+  }, [videoDetails]);
+
   const addToPlaylist = () => {
     dispatch(setUserPlaylist([...userPlaylist, { videoId, songName }]));
   };
@@ -19,6 +25,7 @@ export function Player({ videoDetails, width, height }) {
   return (
     <S.PlayerContainer isPlayerOpen={isPlayerOpen}>
       <ReactPlayer
+        id="react-player"
         className="react-player"
         width={width}
         height={height}
