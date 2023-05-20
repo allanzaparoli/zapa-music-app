@@ -19,7 +19,6 @@ export function Player({ videoDetails, width, height }) {
     if (isMobileOrTablet) {
       const playBtn = document.getElementById('playBtn');
       playBtn.click();
-      playBtn.click();
     }
   }, [videoDetails]);
 
@@ -44,7 +43,8 @@ export function Player({ videoDetails, width, height }) {
         volume={volume}
         muted={muted}
       />
-      <button type="button" id="playBtn" onClick={() => dispatch(setPlayerState({ ...playerState, playing: !playing }))}>{playing ? 'Parar música' : 'Tocar música'}</button>
+      {!isMobileOrTablet && <button type="button" id="playBtn" onClick={() => dispatch(setPlayerState({ ...playerState, playing: !playing }))}>{playing ? 'Parar música' : 'Tocar música'}</button> }
+      {isMobileOrTablet && <button type="button" id="playBtn" onClick={() => dispatch(setPlayerState({ ...playerState, playing: !playing }))}>{playing ? 'Tocar música' : 'Parar música'}</button> }
       <button type="button" onClick={() => dispatch(setPlayerState({ ...playerState, playing: false, isPlayerOpen: false }))}>Fechar player</button>
       {' - '}
       {' - '}
