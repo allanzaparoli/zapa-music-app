@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import ReactPlayer from 'react-player/youtube';
 import { useSelector, useDispatch } from 'react-redux';
 import { setPlayerState, setUserPlaylist } from 'redux/slices';
@@ -12,15 +11,6 @@ export function Player({ videoDetails, width, height }) {
   const dispatch = useDispatch();
 
   const { videoId, songName } = videoDetails;
-
-  const isMobileOrTablet = window.matchMedia('(max-width: 768px)').matches;
-
-  useEffect(() => {
-    if (isMobileOrTablet) {
-      const playBtn = document.getElementById('playBtn');
-      playBtn.click();
-    }
-  }, [videoDetails]);
 
   const addToPlaylist = () => {
     dispatch(setUserPlaylist([...userPlaylist, { videoId, songName }]));
@@ -43,8 +33,7 @@ export function Player({ videoDetails, width, height }) {
         volume={volume}
         muted={muted}
       />
-      {!isMobileOrTablet && <button type="button" id="playBtn" onClick={() => dispatch(setPlayerState({ ...playerState, playing: !playing }))}>{playing ? 'Parar música' : 'Tocar música'}</button> }
-      {isMobileOrTablet && <button type="button" id="playBtn" onClick={() => dispatch(setPlayerState({ ...playerState, playing: !playing }))}>{playing ? 'Tocar música' : 'Parar música'}</button> }
+      <button type="button" id="playBtn" onClick={() => dispatch(setPlayerState({ ...playerState, playing: !playing }))}>{playing ? 'Parar música' : 'Tocar música'}</button>
       <button type="button" onClick={() => dispatch(setPlayerState({ ...playerState, playing: false, isPlayerOpen: false }))}>Fechar player</button>
       {' - '}
       {' - '}
