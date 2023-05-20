@@ -39,8 +39,7 @@ export function Player({ videoDetails, width, height }) {
         volume={volume}
         muted={muted}
       />
-      <button type="button" onClick={() => dispatch(setPlayerState({ ...playerState, muted: !muted }))}>Mudo</button>
-      <button type="button" id="playBtn" onClick={() => dispatch(setPlayerState({ ...playerState, playing: !playing, isPlayerOpen: !isPlayerOpen }))}>{playing ? 'Parar música' : 'Tocar música'}</button>
+      <button type="button" id="playBtn" onClick={() => dispatch(setPlayerState({ ...playerState, playing: !playing }))}>{playing ? 'Parar música' : 'Tocar música'}</button>
       <button type="button" onClick={() => dispatch(setPlayerState({ ...playerState, playing: false, isPlayerOpen: false }))}>Fechar player</button>
       {' - '}
       {' - '}
