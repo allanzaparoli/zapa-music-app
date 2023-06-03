@@ -1,0 +1,9 @@
+.title {
+  font-size: 1.0rem;
+  margin: 2rem 2rem 1.0rem;
+  color: var(--blue-500);
+}
+
+.title a {
+  color: var(--blue-500);
+}

@@ -3,7 +3,7 @@ import { Typography, Link } from '@mui/material';
 
 export const FooterContainer = styled.footer`
   position: fixed;
-  background-color: #2c3e50;
+  background-color: var(--blue-500);
   padding: 20px;
   width: 100%;
   bottom: 0;
@@ -30,10 +30,11 @@ export const FooterLink = ({ children, href }) => (
   >
     <Link
       target="_blank"
-      color="#2980b9"
+      color="#ffffff"
       underline="hover"
       href={href}
       rel="noreferrer"
+      fontSize={14}
     >
       {children}
     </Link>

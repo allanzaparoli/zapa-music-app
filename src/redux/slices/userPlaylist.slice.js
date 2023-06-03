@@ -15,4 +15,4 @@ export const userPlaylistSlice = createSlice({
   },
 });
 
-export const { setUserPlaylist } = userPlaylistSlice.actions;
+export const { setUserPlaylist, logoutPlaylist } = userPlaylistSlice.actions;

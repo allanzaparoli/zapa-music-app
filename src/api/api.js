@@ -41,3 +41,88 @@ export const searchItunesAPI = (search) => {
 
   return result;
 };
+
+export const createNewUserAccount = (loginInfo) => {
+  const options = {
+    method: 'POST',
+    url: 'https://zapa-music-app.pandlr.com/users/register',
+    data: loginInfo,
+  };
+
+  const result = axios.request(options).then((response) => response.data);
+
+  return result;
+};
+
+export const loginUser = (loginInfo) => {
+  const options = {
+    method: 'POST',
+    url: 'https://zapa-music-app.pandlr.com/users/login',
+    data: loginInfo,
+  };
+
+  const result = axios.request(options).then((response) => response.data);
+
+  return result;
+};
+
+export const addSongToPlaylist = (songInfo) => {
+  const userId = localStorage.getItem('reduxStore') ? JSON.parse(localStorage.getItem('reduxStore')).simpleLogin.id : null;
+  const options = {
+    method: 'POST',
+    url: `https://zapa-music-app.pandlr.com/users/playlists/${userId}`,
+    data: songInfo,
+  };
+
+  const result = axios.request(options).then((response) => response.data);
+
+  return result;
+};
+
+export const getUserPlayListByUserByUserId = () => {
+  const userId = localStorage.getItem('reduxStore') ? JSON.parse(localStorage.getItem('reduxStore')).simpleLogin.id : null;
+  const options = {
+    method: 'GET',
+    url: `https://zapa-music-app.pandlr.com/users/playlists/${userId}`,
+  };
+
+  const result = axios.request(options).then((response) => response.data);
+
+  return result;
+};
+
+export const createNewNote = (noteInfo) => {
+  const userId = localStorage.getItem('reduxStore') ? JSON.parse(localStorage.getItem('reduxStore')).simpleLogin.id : null;
+  const options = {
+    method: 'POST',
+    url: `https://zapa-music-app.pandlr.com/users/notes/${userId}`,
+    data: noteInfo,
+  };
+
+  const result = axios.request(options).then((response) => response.data);
+
+  return result;
+};
+
+export const getNotesByUserId = () => {
+  const userId = localStorage.getItem('reduxStore') ? JSON.parse(localStorage.getItem('reduxStore')).simpleLogin.id : null;
+  const options = {
+    method: 'GET',
+    url: `https://zapa-music-app.pandlr.com/users/notes/${userId}`,
+  };
+
+  const result = axios.request(options).then((response) => response.data);
+
+  return result;
+};
+
+export const deleteNoteByNoteId = (noteId) => {
+  const options = {
+    method: 'DELETE',
+    url: `https://zapa-music-app.pandlr.com/users/notes/${noteId}`,
+  };
+
+  const result = axios.request(options).then((response) => response.data);
+
+  return result;
+};

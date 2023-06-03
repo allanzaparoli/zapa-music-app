@@ -29,4 +29,4 @@ export const playerStateSlice = createSlice({
   },
 });
 
-export const { setPlayerState } = playerStateSlice.actions;
+export const { setPlayerState, resetPlayerState } = playerStateSlice.actions;
