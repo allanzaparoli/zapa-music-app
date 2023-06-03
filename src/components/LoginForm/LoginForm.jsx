@@ -30,13 +30,13 @@ export function LoginForm() {
         label="Email"
         type="email"
         onChange={(event) => setEmail(event.target.value)}
-        value={email}
+        // value={email}
       />
       <S.TextField
         label="Password"
         type="password"
         onChange={(event) => setPassword(event.target.value)}
-        value={password}
+        // value={password}
       />
       <S.Button type="submit">Login</S.Button>
     </S.Form>
