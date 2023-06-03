@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCurrentVideoId, setPlayerState, setUserPlaylist } from 'redux/slices';
 import { getUserPlayListByUserByUserId } from 'api';
+import styles from './userplaylist.module.css';
 
 export function UserPlaylist() {
   const { userPlaylist, playerState } = useSelector((state) => state);
@@ -27,11 +28,11 @@ export function UserPlaylist() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.list}>
       {userPlaylist.map((song) => (
         <div key={song.videoId}>
-          <span>{song.songName}</span>
-          <button type="button" onClick={() => handlePlay(song.videoId, song.songName)}>Tocar música</button>
+          <span className={styles.songname}>{song.songName}</span>
+          <button className={styles.buttonlist} type="button" onClick={() => handlePlay(song.videoId, song.songName)}>Tocar música</button>
           <p />
         </div>
       ))}

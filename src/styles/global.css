@@ -15,6 +15,11 @@
   --blue-500: #0066CC;
   --blue-700: #0047b3;
   --blue-900: #1a202c;
+
+
+  --darkturqaise-100: #B2D4E7;
+  --darkturqaise-200: #7093DB;
+  --darkturqaise-300: #3D6CB9;
   
 
   --green-300: #00B37E;
@@ -28,10 +33,10 @@
   --orange-700: #CC8400;
 }
 
-:focus {
+/* :focus {
   outline: transparent;
-  box-shadow: var(--blue-500) 0px 0px 0px 3px;
-}
+  box-shadow: var(--blue-100) 0px 0px 0px 3px;
+} */
 
 * {
   margin: 0;
@@ -40,7 +45,7 @@
 }
 
 body {
-  background-color: var(--blue-300);
+  background-color: var(--darkturqaise-100);
   color: var(--gray-100);
   -webkit-font-smoothing: antialiased;
 }
