@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { setCurrentVideoId, setPlayerState } from 'redux/slices';
 import { searchYouTubeAPI } from 'api';
+import styles from './searchresults.module.css';
 
 export function SearchResults() {
   const { results, resultCount } = useSelector((state) => state.searchResults);
@@ -21,19 +22,19 @@ export function SearchResults() {
 
   return (
     <div>
-      <div>
-        Resultados:
+      <div className={styles.resultcount}>
+        Resultado:
         {' '}
         {resultCount}
       </div>
-      <div>
+      <div className={styles.resultmap}>
         {results?.map((result) => (
-          <div key={result.trackId}>
+          <div className={styles.resultmusic} key={result.trackId}>
             <img src={result.artworkUrl100} alt={result.trackName} />
             <div>{result.trackName}</div>
             <div>{result.artistName}</div>
             <div>{result.collectionName}</div>
-            <button type="button" onClick={() => handlePlay(result.artistName, result.trackName)}>Tocar música</button>
+            <button className={styles.resultbutton} type="button" onClick={() => handlePlay(result.artistName, result.trackName)}>Tocar música</button>
           </div>
         ))}
       </div>

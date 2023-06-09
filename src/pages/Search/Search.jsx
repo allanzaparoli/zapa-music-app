@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { searchItunesAPI } from 'api';
 import { useDispatch } from 'react-redux';
 import { setSearchResults } from 'redux/slices';
+import styles from '../../styles/global.module.css';
 
 export function Search() {
   const [loading, setLoading] = useState(false);
@@ -26,8 +27,8 @@ export function Search() {
   return (
     <>
       <Header />
+      <div className={styles.nameheader}>Resultado da Busca</div>
       <SearchInput loading={loading} />
-      <div>Search Results</div>
       <SearchResults />
       <Footer />
     </>

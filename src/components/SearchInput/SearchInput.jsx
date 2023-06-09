@@ -22,13 +22,14 @@ export function SearchInput({ loading = false }) {
           onChange={(event) => setSearchValue(event.target.value)}
           value={searchValue}
         />
-        <S.SearchInputButton
+        <button
+          className={styles.searchButton}
           loading={loading}
           onClick={handleSubmit}
           type="submit"
         >
           Buscar
-        </S.SearchInputButton>
+        </button>
       </form>
     </S.SearchInputContainer>
   );

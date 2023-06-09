@@ -25,7 +25,7 @@ export function Header() {
             {' - '}
             <Link to="/my-playlist">Minha Playlist</Link>
             {' - '}
-            <Link to="/note">Notes</Link>
+            <Link to="/note">Anotações</Link>
             {' - '}
             <Link to="/logout">Logout</Link>
           </span>

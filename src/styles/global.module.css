@@ -57,7 +57,23 @@ body, input, textarea, button {
 }
 
 .nameheader {
+  margin-top: 2rem;
   margin-left: 2rem;
   color: var(--blue-500);
   font-size: large;
 }
+
+.wrapper {
+  max-width: 90rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+  .wrapper {
+    grid-template-columns: 1fr;
+  }

@@ -5,7 +5,7 @@ export function Note() {
   return (
     <>
       <Header />
-      <div className={styles.nameheader}>Note</div>
+      <div className={styles.nameheader}>Anotações</div>
       <br />
       <NewPost />
       <Footer />

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { createNewNote, getNotesByUserId, deleteNoteByNoteId } from 'api';
 import { Comment } from '../Comment/Comment.jsx';
 
-import styles from './styles.module.css';
+import styles from './post.module.css';
 
 export function NewPost({ author }) {
   const [comments, setComments] = useState([]);
@@ -86,10 +86,11 @@ export function NewPost({ author }) {
       </form>
 
       <div className={styles.commentList}>
-        {comments.map((comment) => (
+        {comments.map((comment, index) => (
           <Comment
             key={comment.id}
             id={comment.id}
+            index={index}
             content={comment.noteDescription}
             deleteComment={deleteComment}
           />

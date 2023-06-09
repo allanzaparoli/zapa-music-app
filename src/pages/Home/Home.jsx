@@ -5,7 +5,7 @@ export function Home() {
   return (
     <>
       <Header />
-      <div className={styles.nameheader}>Home</div>
+      <div className={styles.nameheader}>Buscar Músicas</div>
       <br />
       <SearchInput />
       <Footer />

@@ -17,13 +17,24 @@
   color: var(--gray-700);
 }
 
-.search button {
+/* .search button {
   display: flex;
-  background: var(--blue-500);
+  background-color: var(--blue-700);
   margin-left: 3rem;
-  border: 0;
-  color: var(--white);
+  border: 5px;
+  color: var(--blue-700);
   cursor: pointer;
   line-height: 0;
   border-radius: 1px;
+} */
+
+.searchButton {
+  height: 3.5rem;
+  border-radius: 0 0.25rem 0.25rem 0;
+  background-color: var(--blue-500);
+  border: 0;
+  padding: 0 0.5rem;
+  color: var(--white);
+  font-weight: 600;
+  transition: filter 0.2s;
 }

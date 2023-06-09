@@ -5,7 +5,7 @@ export function MyPlaylist() {
   return (
     <>
       <Header />
-      <div className={styles.nameheader}>My Playlist</div>
+      <div className={styles.nameheader}>Minha Playlist</div>
       <br />
       <UserPlaylist />
       <Footer />
