@@ -17,18 +17,7 @@
   color: var(--gray-700);
 }
 
-/* .search button {
-  display: flex;
-  background-color: var(--blue-700);
-  margin-left: 3rem;
-  border: 5px;
-  color: var(--blue-700);
-  cursor: pointer;
-  line-height: 0;
-  border-radius: 1px;
-} */
-
-.searchButton {
+.searchButton[type=submit] {
   height: 3.5rem;
   border-radius: 0 0.25rem 0.25rem 0;
   background-color: var(--blue-500);
@@ -37,4 +26,13 @@
   color: var(--white);
   font-weight: 600;
   transition: filter 0.2s;
+}
+
+.searchButton[type=submit]:not(disable):hover {
+  background-color: var(--blue-400);
+}
+
+.searchButton[type=submit]:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
 }

@@ -13,6 +13,8 @@ export function SearchInput({ loading = false }) {
     navigate(`/search/${searchValue}`);
   };
 
+  const isNewCommentEmpty = searchValue.length === 0;
+
   return (
     <S.SearchInputContainer>
       <form className={styles.search} onSubmit={handleSubmit}>
@@ -27,6 +29,7 @@ export function SearchInput({ loading = false }) {
           loading={loading}
           onClick={handleSubmit}
           type="submit"
+          disabled={isNewCommentEmpty}
         >
           Buscar
         </button>

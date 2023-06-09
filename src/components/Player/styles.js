@@ -5,7 +5,6 @@ export const PlayerContainer = styled.div`
   bottom: 0;
   width: 100%;
   height: 100px;
-  background-color: var(--blue-500);
   z-index: 100;
   display: flex;
   align-items: center;

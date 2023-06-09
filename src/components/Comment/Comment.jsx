@@ -9,6 +9,7 @@ export function Comment({
   const handleDeleteComment = () => {
     deleteComment(id);
   };
+
   const { simpleLogin } = useSelector((state) => state);
 
   useEffect(() => {

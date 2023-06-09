@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setPlayerState, setUserPlaylist } from 'redux/slices';
 import { addSongToPlaylist } from 'api';
 import * as S from './styles';
+import styles from './player.module.css';
 
 export function Player({ videoDetails, width, height }) {
   const { playerState, userPlaylist } = useSelector((state) => state);
@@ -41,12 +42,15 @@ export function Player({ videoDetails, width, height }) {
         muted={muted}
         onEnded={() => dispatch(setPlayerState({ ...playerState, playing: false }))}
       />
-      <button type="button" id="playBtn" onClick={() => dispatch(setPlayerState({ ...playerState, playing: !playing }))}>{playing ? 'Parar' : 'Tocar'}</button>
-      {' - '}
-      <button type="button" onClick={() => dispatch(setPlayerState({ ...playerState, playing: false, isPlayerOpen: false }))}>Fechar player</button>
-      {' - '}
-      {' - '}
-      <button type="button" onClick={addToPlaylist}>Adicionar a playlist</button>
+      <div className={styles.playbuttons}>
+        <button className={styles.buttonplay} type="button" id="playBtn" onClick={() => dispatch(setPlayerState({ ...playerState, playing: !playing }))}>{playing ? 'Parar' : 'Tocar'}</button>
+        {' - '}
+        {' - '}
+        <button className={styles.buttonstop} type="button" onClick={() => dispatch(setPlayerState({ ...playerState, playing: false, isPlayerOpen: false }))}>Fechar player</button>
+        {' - '}
+        {' - '}
+        <button className={styles.addplaylist} type="button" onClick={addToPlaylist}>Adicionar a playlist</button>
+      </div>
     </S.PlayerContainer>
   );
 }

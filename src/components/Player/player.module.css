@@ -1,0 +1,28 @@
+.playbuttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    margin-right: 100rem;
+    margin-left: 20rem;
+    background-color: var(--blue-500);
+}
+
+.playbuttons button {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 0.25rem;
+    border: 0;
+    background: var(--blue-400);
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: filter 0.2s;
+    margin-top: 0.9rem;
+}
+
+.playbuttons button:hover {
+    filter: brightness(0.9);
+}
