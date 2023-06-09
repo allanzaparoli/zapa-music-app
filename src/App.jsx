@@ -1,7 +1,7 @@
 import { Router } from 'routes';
 import { Player } from 'components';
 import { useSelector } from 'react-redux';
-import 'styles/global.css';
+import 'styles/global.module.css';
 
 export function App() {
   const { currentVideoId } = useSelector((state) => state);

@@ -55,3 +55,9 @@ body, input, textarea, button {
   font-weight: 400;
   font-size: 1rem;
 }
+
+.nameheader {
+  margin-left: 2rem;
+  color: var(--blue-500);
+  font-size: large;
+}
