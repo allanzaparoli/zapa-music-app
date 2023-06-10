@@ -1,11 +1,16 @@
-.list {
-  list-style: none;
+.listtable {
+  max-width: 800px;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 3rem 0rem 5rem 2rem;
+}
+
+.listrow {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--blue-500);
+  padding: 1rem;
 }
 
 .songname {
@@ -13,24 +18,7 @@
 }
 
 .buttonlist {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-  background-color: var(--blue-200);
-}
-
-.buttontrash {
-  display: flex;
-  flex-direction: row;
-  background: transparent;
-  border: 0;
-  color: var(--gray-700);
-  cursor: pointer;
-  line-height: 0;
-  border-radius: 6px;
-  margin-left: 8rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  color: var(--white);
+  background-color: var(--blue-500);
+  padding: 0.3rem 0.6rem;
 }

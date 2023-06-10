@@ -27,17 +27,32 @@ export function SearchResults() {
         {' '}
         {resultCount}
       </div>
-      <div className={styles.resultmap}>
-        {results?.map((result) => (
-          <div className={styles.resultmusic} key={result.trackId}>
-            <img src={result.artworkUrl100} alt={result.trackName} />
-            <div>{result.trackName}</div>
-            <div>{result.artistName}</div>
-            <div>{result.collectionName}</div>
-            <button className={styles.resultbutton} type="button" onClick={() => handlePlay(result.artistName, result.trackName)}>Tocar música</button>
-          </div>
-        ))}
-      </div>
+      <table className={styles.resulttable}>
+        <tbody>
+          {results?.map((result) => (
+            <tr className={styles.resultrow} key={result.trackId}>
+              <td>
+                <img src={result.artworkUrl100} alt={result.trackName} />
+              </td>
+              <td>
+                <div>{result.trackName}</div>
+                <div>{result.artistName}</div>
+                <div>{result.collectionName}</div>
+              </td>
+              <td>
+                <button
+                  className={styles.resultbutton}
+                  type="button"
+                  onClick={() => handlePlay(result.artistName, result.trackName)}
+                >
+                  Tocar música
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
     </div>
   );
 }

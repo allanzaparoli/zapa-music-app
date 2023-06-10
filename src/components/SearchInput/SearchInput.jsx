@@ -29,7 +29,7 @@ export function SearchInput({ loading = false }) {
           loading={loading}
           onClick={handleSubmit}
           type="submit"
-          disabled={isNewCommentEmpty}
+          disabled={isNewCommentEmpty || loading}
         >
           Buscar
         </button>

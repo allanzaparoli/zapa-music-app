@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCurrentVideoId, setPlayerState, setUserPlaylist } from 'redux/slices';
 import { getUserPlayListByUserByUserId } from 'api';
-import { Trash } from 'react-feather';
 import styles from './userplaylist.module.css';
 
 export function UserPlaylist() {
@@ -28,27 +27,26 @@ export function UserPlaylist() {
     fetchUserPlaylist();
   }, []);
 
-  const handleDeleteMusic = async () => {
-    try {
-      const result = await getUserPlayListByUserByUserId();
-      dispatch(setUserPlaylist(result));
-    } catch (error) {
-      alert('Erro ao deletar música! Tente novamente!');
-    }
-  };
-
   return (
-    <div className={styles.list}>
-      {userPlaylist.map((song) => (
-        <div key={song.videoId}>
-          <span className={styles.songname}>{song.songName}</span>
-          <button className={styles.buttontrash} onClick={handleDeleteMusic} title="Deletar música na playlist" type="button">
-            <Trash size={20} />
-          </button>
-          <button className={styles.buttonlist} type="button" onClick={() => handlePlay(song.videoId, song.songName)}>Tocar música</button>
-          <p />
-        </div>
-      ))}
-    </div>
+    <table className={styles.listtable}>
+      <tbody>
+        {userPlaylist.map((song) => (
+          <tr className={styles.listrow} key={song.videoId}>
+            <td>
+              <span className={styles.songname}>{song.songName}</span>
+            </td>
+            <td>
+              <button
+                className={styles.buttonlist}
+                type="button"
+                onClick={() => handlePlay(song.videoId, song.songName)}
+              >
+                Tocar música
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 }
