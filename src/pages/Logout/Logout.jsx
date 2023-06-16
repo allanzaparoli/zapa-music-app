@@ -1,6 +1,7 @@
 import { Header, Footer } from 'components';
 import { useDispatch } from 'react-redux';
 import { logoutUser } from 'redux/slices';
+import styles from '../../styles/global.module.css';
 
 export function Logout() {
   const dispatch = useDispatch();
@@ -9,8 +10,8 @@ export function Logout() {
   return (
     <>
       <Header />
-      <h1>Logout</h1>
-      <p>
+      <h1 className={styles.logoutName}>Logout</h1>
+      <p className={styles.logoutUser}>
         Você foi deslogado com sucesso! Volte sempre!
       </p>
       <Footer />
